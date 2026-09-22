@@ -1,0 +1,106 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\dev\\ChessLib\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|c:\\dev\\chesslib\\chesslib\\src\\core\\movevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|solutionrelative:chesslib\\src\\core\\movevalidator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|c:\\dev\\chesslib\\chesslib\\src\\core\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|solutionrelative:chesslib\\src\\core\\board.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|c:\\dev\\chesslib\\chesslib\\src\\core\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|solutionrelative:chesslib\\src\\core\\log.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|c:\\dev\\chesslib\\chesslib\\src\\core\\fen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|solutionrelative:chesslib\\src\\core\\fen.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|c:\\dev\\chesslib\\chesslib\\src\\core\\bitboardset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{09C81697-1A83-B005-6803-14D67D73CE1E}|ChessLib\\ChessLib.csproj|solutionrelative:chesslib\\src\\core\\bitboardset.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "board.cs",
+              "DocumentMoniker": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\board.cs",
+              "RelativeDocumentMoniker": "ChessLib\\src\\core\\board.cs",
+              "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\board.cs",
+              "RelativeToolTip": "ChessLib\\src\\core\\board.cs",
+              "ViewState": "AgIAAEsAAAAAcmZmZmb4v1YAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-16T09:28:36.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MoveValidator.cs",
+              "DocumentMoniker": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\MoveValidator.cs",
+              "RelativeDocumentMoniker": "ChessLib\\src\\core\\MoveValidator.cs",
+              "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\MoveValidator.cs",
+              "RelativeToolTip": "ChessLib\\src\\core\\MoveValidator.cs",
+              "ViewState": "AgIAACYAAAAAlpmZmZkrwDgAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-15T18:27:44.241Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BitBoardSet.cs",
+              "DocumentMoniker": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\BitBoardSet.cs",
+              "RelativeDocumentMoniker": "ChessLib\\src\\core\\BitBoardSet.cs",
+              "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\BitBoardSet.cs",
+              "RelativeToolTip": "ChessLib\\src\\core\\BitBoardSet.cs",
+              "ViewState": "AgIAACYAAAAAopmZmZkKwC8AAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T20:26:04.749Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FEN.cs",
+              "DocumentMoniker": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\FEN.cs",
+              "RelativeDocumentMoniker": "ChessLib\\src\\core\\FEN.cs",
+              "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\FEN.cs",
+              "RelativeToolTip": "ChessLib\\src\\core\\FEN.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T19:21:38.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Log.cs",
+              "DocumentMoniker": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\Log.cs",
+              "RelativeDocumentMoniker": "ChessLib\\src\\core\\Log.cs",
+              "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\Log.cs",
+              "RelativeToolTip": "ChessLib\\src\\core\\Log.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-14T18:55:08.729Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
