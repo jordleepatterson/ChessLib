@@ -24,7 +24,7 @@ public class MoveValidator
             {
                 if ((TempBoard.bitboards[k + (int)TempBoard.Turn] & (1UL << i)) != 0)
                 {
-                    MoveMap moveMap = new MoveMap(TempBoard, i);
+                    MoveMap moveMap = new MoveMap(TempBoard, (Sqaure)i);
                     moveMap.GenerateAttacks();
 
                     const int king_offset = 5;
@@ -41,8 +41,8 @@ public class MoveValidator
     }
     public bool IsLegal(Move move)
     {
-        bitboard FromMask = 1UL << move.From;
-        bitboard ToMask = 1UL << move.To;
+        bitboard FromMask = 1UL << (int)move.From;
+        bitboard ToMask = 1UL << (int)move.To;
         bitboard whitePieces = board.bitboards.wPieces;
         bitboard blackPieces = board.bitboards.bPieces;
 
@@ -61,7 +61,8 @@ public class MoveValidator
         MoveMap moveMap = new MoveMap(board, move.From);
         moveMap.GenerateMoves();
 
-        bool IsInMoveMap = (moveMap.castling & 1UL << move.To) != 0 || (moveMap.moves & 1UL << move.To) != 0;
+        bool IsInMoveMap = (moveMap.castling & 1UL << (int)move.To) != 0 ||
+                           (moveMap.moves & 1UL << (int)move.To) != 0;
 
         if (IsInMoveMap && IsLegal(move))
             return true;

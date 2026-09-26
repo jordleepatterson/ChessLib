@@ -66,9 +66,9 @@ public static class ChessLog
         {
             if ((board.bitboards.Occupied & (1UL << i)) != 0)
             {
-                MoveMap moveMap = new MoveMap(board, i);
+                MoveMap moveMap = new MoveMap(board, (Sqaure)i);
                 moveMap.GenerateMoves();
-                Console.WriteLine(board.GetPieceColor(i) + "_" + board.GetPieceType(i) + " :");
+                Console.WriteLine(board.GetPieceColor((Sqaure)i) + "_" + board.GetPieceType((Sqaure)i) + " :");
                 PrintBitBoard(moveMap.moves);
             }
         }
@@ -80,7 +80,7 @@ public static class ChessLog
         {
             if ((board.bitboards.wPieces & (1UL << i)) != 0)
             {
-                MoveMap moveMap = new MoveMap(board, i);
+                MoveMap moveMap = new MoveMap(board, (Sqaure)i);
                 moveMap.GenerateMoves();
                 moves |= moveMap.moves;
             }
@@ -94,7 +94,7 @@ public static class ChessLog
         {
             if ((board.bitboards.bPieces & (1UL << i)) != 0)
             {
-                MoveMap moveMap = new MoveMap(board, i);
+                MoveMap moveMap = new MoveMap(board, (Sqaure)i);
                 moveMap.GenerateMoves();
                 moves |= moveMap.moves;
             }

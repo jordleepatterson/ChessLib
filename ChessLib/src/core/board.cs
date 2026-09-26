@@ -52,18 +52,18 @@ public sealed class Board
             return false;
         }
     }
-    public void HandleCastlingRights(int MovedPiecePosition)
+    public void HandleCastlingRights(Sqaure MovedPiecePosition)
     {
         if (castlingRights == None) return;
 
         castlingRights &= MovedPiecePosition switch
         {
-            (int)e1 => ~(WhiteKingSide | WhiteQueenSide),
-            (int)e8 => ~(BlackKingSide | BlackQueenSide),
-            (int)h1 => ~WhiteKingSide,
-            (int)h8 => ~BlackKingSide,
-            (int)a1 => ~WhiteQueenSide,
-            (int)a8 => ~BlackQueenSide,
+            e1 => ~(WhiteKingSide | WhiteQueenSide),
+            e8 => ~(BlackKingSide | BlackQueenSide),
+            h1 => ~WhiteKingSide,
+            h8 => ~BlackKingSide,
+            a1 => ~WhiteQueenSide,
+            a8 => ~BlackQueenSide,
             _ => castlingRights
         };
     }
@@ -90,16 +90,16 @@ public sealed class Board
             bitboards[i] = 0UL;
         }
     }
-    public int GetBitboardIndex(int position)
+    public int GetBitboardIndex(Sqaure position)
     {
         for (int i = 0; i < 12; i++)
         {
-            if ((bitboards[i] & (1UL << position)) != 0)
+            if ((bitboards[i] & (1UL << (int)position)) != 0)
                 return i;
         }
         return -1;
     }
-    public bool IsSquareAttacked(int square)
+    public bool IsSquareAttacked(Sqaure square)
     {
         PieceColor ColorofAttackers;
 
@@ -109,7 +109,7 @@ public sealed class Board
             ColorofAttackers = white;
         return IsSquareAttacked(square, ColorofAttackers);
     }
-    public bool IsSquareAttacked(int square, PieceColor ColorofAttackers)
+    public bool IsSquareAttacked(Sqaure square, PieceColor ColorofAttackers)
     {
         for (int i = 0; i < 64; i++)
         {
@@ -119,21 +119,21 @@ public sealed class Board
 
                 if ((bitboards[index] & (1UL << i)) != 0)
                 {
-                    MoveMap moveMap = new MoveMap(this, i);
+                    MoveMap moveMap = new MoveMap(this, (Sqaure)i);
                     moveMap.GenerateAttacks();
 
-                    if ((moveMap.attacks & (1UL << square)) != 0)
+                    if ((moveMap.attacks & (1UL << (int)square)) != 0)
                         return true;
                 }
             }
         }
         return false;
     }
-    public PieceType GetPieceType(int position)
+    public PieceType GetPieceType(Sqaure position)
     {
         for (int i = 0; i < 12; i++)
         {
-            if ((bitboards[i] & (1UL << position)) != 0)
+            if ((bitboards[i] & (1UL << (int)position)) != 0)
             {
                 return i switch
                 {
@@ -156,13 +156,13 @@ public sealed class Board
         return empty;
     }
 
-    public PieceColor GetPieceColor(int position)
+    public PieceColor GetPieceColor(Sqaure position)
     {
         int BitboardIndex = -1;
 
         for (int i = 0; i < 12; i++)
         {
-            if ((bitboards[i] & (1UL << position)) != 0)
+            if ((bitboards[i] & (1UL << (int)position)) != 0)
             {
                 BitboardIndex = i;
                 break;
@@ -194,18 +194,18 @@ public sealed class Board
         };
         bool IsSquaresAttacked = castlingSide switch
         {
-            WhiteKingSide => IsSquareAttacked((int)e1, ClrOfAtck) ||
-                                IsSquareAttacked((int)f1, ClrOfAtck) ||
-                                IsSquareAttacked((int)g1, ClrOfAtck),
-            WhiteQueenSide => IsSquareAttacked((int)e1, ClrOfAtck) ||
-                               IsSquareAttacked((int)d1, ClrOfAtck) ||
-                               IsSquareAttacked((int)c1, ClrOfAtck),
-            BlackKingSide => IsSquareAttacked((int)e8, ClrOfAtck) ||
-                                IsSquareAttacked((int)f8, ClrOfAtck) ||
-                                IsSquareAttacked((int)g8, ClrOfAtck),
-            BlackQueenSide => IsSquareAttacked((int)e8, ClrOfAtck) ||
-                                IsSquareAttacked((int)d8, ClrOfAtck) ||
-                                IsSquareAttacked((int)c8, ClrOfAtck),
+            WhiteKingSide => IsSquareAttacked(e1, ClrOfAtck) ||
+                                IsSquareAttacked(f1, ClrOfAtck) ||
+                                IsSquareAttacked(g1, ClrOfAtck),
+            WhiteQueenSide => IsSquareAttacked(e1, ClrOfAtck) ||
+                               IsSquareAttacked(d1, ClrOfAtck) ||
+                               IsSquareAttacked(c1, ClrOfAtck),
+            BlackKingSide => IsSquareAttacked(e8, ClrOfAtck) ||
+                                IsSquareAttacked(f8, ClrOfAtck) ||
+                                IsSquareAttacked(g8, ClrOfAtck),
+            BlackQueenSide => IsSquareAttacked(e8, ClrOfAtck) ||
+                                IsSquareAttacked(d8, ClrOfAtck) ||
+                                IsSquareAttacked(c8, ClrOfAtck),
             _ => false
         };
 

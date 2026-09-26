@@ -11,18 +11,18 @@ public class MoveMap
     public bitboard attacks { get; private set; }
 
 
-    public readonly int piecePosition;
+    public readonly Sqaure piecePosition;
     private readonly bitboard Occupied;
     private Board board;
     private static bool IsInsideBounds(int r, int f) => f >= 0 && f < 8 && r >= 0 && r < 8;
-    public MoveMap(Board board, int piecePosition)
+    public MoveMap(Board board, Sqaure piecePosition)
     {
         this.board = board;
         this.piecePosition = piecePosition;
         Occupied = board.bitboards.Occupied;
         InitMaps();
     }
-    public void GenerateLegalMoves(int position, MoveValidator moveValidator)
+    public void GenerateLegalMoves(Sqaure position, MoveValidator moveValidator)
     {
         if (moveValidator.board != board)
             throw new WarningException("moveValidator.board != MoveGenerator.board");
@@ -30,27 +30,27 @@ public class MoveMap
         GenerateMoves(position);
         MakeLegal(moveValidator, position);
     }
-    private void MakeLegal(MoveValidator moveValidator, int position)
+    private void MakeLegal(MoveValidator moveValidator, Sqaure position)
     {
         for (int i = 0; i < 64; i++)
         {
             if ((moves & (1UL << i)) != 0)
             {
-                Move tempMove = new Move(position, i);
+                Move tempMove = new Move(position, (Sqaure)i);
 
                 if (moveValidator.IsLegal(tempMove))
                     legalMoves |= 1UL << i;
             }
             if ((captures & (1UL << i)) != 0)
             {
-                Move tempMove = new Move(position, i);
+                Move tempMove = new Move(position, (Sqaure)i);
 
                 if (moveValidator.IsLegal(tempMove))
                     legalCaptures |= 1UL << i;
             }
         }
     }
-    public void GenerateAttacks(int position)
+    public void GenerateAttacks(Sqaure position)
     {
         InitMaps();
 
@@ -68,7 +68,7 @@ public class MoveMap
         }
         ;
     }
-    public void GenerateMoves(int position)
+    public void GenerateMoves(Sqaure position)
     {
         InitMaps();
 
@@ -86,10 +86,10 @@ public class MoveMap
         }
         ;
     }
-    public void GeneratePawnMoves(int position)
+    public void GeneratePawnMoves(Sqaure position)
     {
-        int rank = position / 8;
-        int file = position % 8;
+        int rank = (int)position / 8;
+        int file = (int)position % 8;
 
         int dir;
         int StartRank;
@@ -123,19 +123,19 @@ public class MoveMap
         }
         GeneratePawnAttacks(position);
     }
-    public void GeneratePawnAttacks(int position)
+    public void GeneratePawnAttacks(Sqaure position)
     {
         if (board.Turn == white)
-            attacks = PrecomputedMoveMaps.WhitePawnAttacks[position];
+            attacks = PrecomputedMoveMaps.WhitePawnAttacks[(int)position];
         else
-            attacks = PrecomputedMoveMaps.BlackPawnAttacks[position];
+            attacks = PrecomputedMoveMaps.BlackPawnAttacks[(int)position];
     }
-    public void GenerateKingAttacks(int position)
+    public void GenerateKingAttacks(Sqaure position)
     {
-        attacks = PrecomputedMoveMaps.KingAttacks[position];
+        attacks = PrecomputedMoveMaps.KingAttacks[(int)position];
         moves = attacks;
     }
-    public void GenerateCastling(int position)
+    public void GenerateCastling(Sqaure position)
     {
         if (board.GetPieceColor(position) == white)
         {
@@ -153,9 +153,9 @@ public class MoveMap
         }
 
     }
-    public void GenerateKnightAttacks(int position)
+    public void GenerateKnightAttacks(Sqaure position)
     {
-        attacks = PrecomputedMoveMaps.KnightAttacks[position];
+        attacks = PrecomputedMoveMaps.KnightAttacks[(int)position];
         moves = attacks;
 
         for (int i = 0; i < 64; i++)
@@ -163,21 +163,21 @@ public class MoveMap
                 captures |= 1UL << i;
 
     }
-    public void GenerateBishopAttacks(int position)
+    public void GenerateBishopAttacks(Sqaure position)
     {
         int[][] directions = {
             new int[] { 1, 1 }, new int[] { -1, 1 }, new int[] { 1, -1 }, new int[] { -1, -1 }
         };
         GenerateRayAttacks(position, directions);
     }
-    public void GenerateRookAttacks(int position)
+    public void GenerateRookAttacks(Sqaure position)
     {
         int[][] directions = {
             new int[] { 1, 0 }, new int[] { -1, 0 }, new int[] { 0, -1 }, new int[] { 0, 1 }
         };
         GenerateRayAttacks(position, directions);
     }
-    public void GenerateQueenAttacks(int position)
+    public void GenerateQueenAttacks(Sqaure position)
     {
         int[][] directions =
         {
@@ -186,10 +186,10 @@ public class MoveMap
         };
         GenerateRayAttacks(position, directions);
     }
-    public void GenerateRayAttacks(int position, int[][] directions)
+    public void GenerateRayAttacks(Sqaure position, int[][] directions)
     {
-        int rank = position / 8;
-        int file = position % 8;
+        int rank = (int)position / 8;
+        int file = (int)position % 8;
 
         foreach (int[] dir in directions)
         {

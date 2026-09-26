@@ -26,8 +26,8 @@ public class MoveHandler
         MoveMap moveMap = new MoveMap(board, move.From);
         moveMap.GenerateLegalMoves(board.moveValidator);
 
-        bitboard fromMask = 1UL << move.From;
-        bitboard toMask = 1Ul << move.To;
+        bitboard fromMask = 1UL << (int)move.From;
+        bitboard toMask = 1Ul << (int)move.To;
 
         if ((moveMap.castling & toMask) != 0) return MoveFlags.Castle;
         if ((moveMap.captures & toMask) != 0) return MoveFlags.Capture;
@@ -41,9 +41,9 @@ public class MoveHandler
 
         if (movingPiece == -1 || capturedPiece == -1) return;
 
-        bitboards[movingPiece] &= ~(1UL << move.From);
-        bitboards[capturedPiece] &= ~(1UL << move.To);
-        bitboards[movingPiece] |= 1UL << move.To;
+        bitboards[movingPiece] &= ~(1UL << (int)move.From);
+        bitboards[capturedPiece] &= ~(1UL << (int)move.To);
+        bitboards[movingPiece] |= 1UL << (int)move.To;
     }
     public void MoveNormal(Move move)
     {
@@ -51,8 +51,8 @@ public class MoveHandler
 
         if (movingPiece == -1) return;
 
-        bitboards[movingPiece] &= ~(1UL << move.From);
-        bitboards[movingPiece] |= 1UL << move.To;
+        bitboards[movingPiece] &= ~(1UL << (int)move.From);
+        bitboards[movingPiece] |= 1UL << (int)move.To;
     }
 
     public void MoveAndCapture(Move move)
@@ -60,8 +60,8 @@ public class MoveHandler
         int movingPiece = board.GetBitboardIndex(move.From);
         int capturedPiece = board.GetBitboardIndex(move.To);
 
-        bitboard fromMask = 1UL << move.From;
-        bitboard toMask = 1UL << move.To;
+        bitboard fromMask = 1UL << (int)move.From;
+        bitboard toMask = 1UL << (int)move.To;
 
         if (movingPiece == -1)
             return;
@@ -74,9 +74,9 @@ public class MoveHandler
     }
     public void Castle(Move move)
     {
-        if (move.To == (int)g1 || move.To == (int)g8) CastleKingSide();
+        if (move.To == g1 || move.To == g8) CastleKingSide();
         else
-            if (move.To == (int)c1 || move.To == (int)c8) CastleQueenSide();
+            if (move.To == c1 || move.To == c8) CastleQueenSide();
     }
     public void CastleKingSide()
     {

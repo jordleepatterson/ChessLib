@@ -4,9 +4,9 @@ public struct Piece
 {
     public readonly PieceType pieceType;
     public readonly PieceColor pieceColor;
-    public int Position;
+    public Sqaure Position;
 
-    public Piece(PieceType pieceType, PieceColor pieceColor, int Position)
+    public Piece(PieceType pieceType, PieceColor pieceColor, Sqaure Position)
     {
         this.pieceType = pieceType;
         this.pieceColor = pieceColor;
