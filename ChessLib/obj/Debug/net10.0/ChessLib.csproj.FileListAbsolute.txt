@@ -9,3 +9,4 @@ C:\dev\ChessLib\ChessLib\obj\Debug\net10.0\ChessLib.dll
 C:\dev\ChessLib\ChessLib\obj\Debug\net10.0\refint\ChessLib.dll
 C:\dev\ChessLib\ChessLib\obj\Debug\net10.0\ChessLib.pdb
 C:\dev\ChessLib\ChessLib\obj\Debug\net10.0\ref\ChessLib.dll
+C:\dev\ChessLib\ChessLib\obj\Debug\net10.0\ChessLib.sourcelink.json

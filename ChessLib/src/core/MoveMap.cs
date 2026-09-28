@@ -58,7 +58,7 @@ public class MoveMap
 
         switch (piece)
         {
-            case pawn: GeneratePawnMoves(position); break;
+            case pawn: GeneratePawnAttacks(position); break;
             case knight: GenerateKnightAttacks(position); break;
             case bishop: GenerateBishopAttacks(position); break;
             case rook: GenerateRookAttacks(position); break;
@@ -76,7 +76,7 @@ public class MoveMap
 
         switch (piece)
         {
-            case pawn: GeneratePawnAttacks(position); break;
+            case pawn: GeneratePawnMoves(position); break;
             case knight: GenerateKnightAttacks(position); break;
             case bishop: GenerateBishopAttacks(position); break;
             case rook: GenerateRookAttacks(position); break;

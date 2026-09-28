@@ -101,12 +101,12 @@ public class Stockfish
                                 string From = movestr.Substring(0, 2);
                                 string To = movestr.Substring(2, 2);
 
-                                int FromIndex = 0;
-                                int ToIndex = 0;
+                                Sqaure FromIndex = nullSqr;
+                                Sqaure ToIndex = nullSqr;
                                 for (int i = 0; i < 64; i++)
                                 {
-                                    if (Board.CharBoard[i] == From) FromIndex = i;
-                                    if (Board.CharBoard[i] == To) ToIndex = i;
+                                    if (Board.CharBoard[i] == From) FromIndex = (Sqaure)i;
+                                    if (Board.CharBoard[i] == To) ToIndex = (Sqaure)i;
                                 }
                                 Move move = new Move(FromIndex, ToIndex);
 

@@ -51,7 +51,7 @@ public class MoveValidator
             (blackPieces & FromMask) != 0 && (blackPieces & ToMask) != 0;
 
         return !IsSamePieceColor && !InCheck(move) &&
-                (Occupied & FromMask) == 0 &&
+                (Occupied & FromMask) != 0 &&
                 move.From != move.To;
     }
     public bool IsValid(Move move)

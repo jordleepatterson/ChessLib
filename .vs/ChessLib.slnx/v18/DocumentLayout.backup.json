@@ -30,8 +30,12 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{c6f34f0d-7ae5-4f3a-be61-fe0c21ae9eb8}"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -40,9 +44,10 @@
               "RelativeDocumentMoniker": "ChessLib\\src\\core\\board.cs",
               "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\board.cs",
               "RelativeToolTip": "ChessLib\\src\\core\\board.cs",
-              "ViewState": "AgIAAF0AAABENjMzM1MwwFYAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAEsAAAAAcmZmZmb4v1YAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T09:28:36.521Z"
+              "WhenOpened": "2026-09-16T09:28:36.521Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -52,7 +57,7 @@
               "RelativeDocumentMoniker": "ChessLib\\src\\core\\MoveValidator.cs",
               "ToolTip": "C:\\dev\\ChessLib\\ChessLib\\src\\core\\MoveValidator.cs",
               "RelativeToolTip": "ChessLib\\src\\core\\MoveValidator.cs",
-              "ViewState": "AgIAAA0AAAAAYWZmZmYqwCMAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAlpmZmZkrwDgAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-09-15T18:27:44.241Z",
               "EditorCaption": ""

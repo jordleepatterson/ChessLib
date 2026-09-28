@@ -68,8 +68,8 @@ public static class PrecomputedMoveMaps
     {
         InitKnightAttacks();
         InitKingAttacks();
-        InitPawnAttacks(WhitePawnAttacks, 1);
-        InitPawnAttacks(BlackPawnAttacks, -1);
+        InitPawnAttacks(WhitePawnAttacks, -1);
+        InitPawnAttacks(BlackPawnAttacks, 1);
         Generated = true;
     }
 }
